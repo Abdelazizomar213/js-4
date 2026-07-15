@@ -34,95 +34,118 @@ async function loadPlanet(id) {
 
     if (!planet) return;
 
-    name.textContent = planet.englishName;
+    if (name)
+        name.textContent = planet.englishName;
 
-    description.textContent =
-        `${planet.englishName} is one of the planets in our Solar System.`;
+    if (description)
+        description.textContent =
+            `${planet.englishName} is one of the planets in our Solar System.`;
 
-    image.src = `./images.jpg/${id}.png`;
-    distance.textContent =
-        planet.semimajorAxis
-            ? `${planet.semimajorAxis.toLocaleString()} km`
-            : "Unknown";
+    if (image)
+        image.src = `./images.jpg/${id}.png`;
 
-    radius.textContent =
-        planet.meanRadius
-            ? `${planet.meanRadius.toLocaleString()} km`
-            : "Unknown";
+    if (distance)
+        distance.textContent =
+            planet.semimajorAxis
+                ? `${planet.semimajorAxis.toLocaleString()} km`
+                : "Unknown";
 
-    mass.textContent =
-        planet.mass
-            ? `${planet.mass.massValue} ×10^${planet.mass.massExponent} kg`
-            : "Unknown";
+    if (radius)
+        radius.textContent =
+            planet.meanRadius
+                ? `${planet.meanRadius.toLocaleString()} km`
+                : "Unknown";
 
-    density.textContent =
-        planet.density
-            ? `${planet.density} g/cm³`
-            : "Unknown";
+    if (mass)
+        mass.textContent =
+            planet.mass
+                ? `${planet.mass.massValue} ×10^${planet.mass.massExponent} kg`
+                : "Unknown";
 
-    orbital.textContent =
-        planet.sideralOrbit
-            ? `${planet.sideralOrbit} days`
-            : "Unknown";
+    if (density)
+        density.textContent =
+            planet.density
+                ? `${planet.density} g/cm³`
+                : "Unknown";
 
-    rotation.textContent =
-        planet.sideralRotation
-            ? `${planet.sideralRotation} hours`
-            : "Unknown";
+    if (orbital)
+        orbital.textContent =
+            planet.sideralOrbit
+                ? `${planet.sideralOrbit} days`
+                : "Unknown";
 
-    moons.textContent =
-        planet.moons
-            ? planet.moons.length
-            : 0;
+    if (rotation)
+        rotation.textContent =
+            planet.sideralRotation
+                ? `${planet.sideralRotation} hours`
+                : "Unknown";
 
-    gravity.textContent =
-        planet.gravity
-            ? `${planet.gravity} m/s²`
-            : "Unknown";
+    if (moons)
+        moons.textContent =
+            planet.moons
+                ? planet.moons.length
+                : "0";
 
-    discoverer.textContent =
-        planet.discoveredBy || "Unknown";
+    if (gravity)
+        gravity.textContent =
+            planet.gravity
+                ? `${planet.gravity} m/s²`
+                : "Unknown";
 
-    discoveryDate.textContent =
-        planet.discoveryDate || "Unknown";
+    if (discoverer)
+        discoverer.textContent =
+            planet.discoveredBy || "Unknown";
 
-    bodyType.textContent =
-        planet.bodyType || "Planet";
+    if (discoveryDate)
+        discoveryDate.textContent =
+            planet.discoveryDate || "Unknown";
 
-    volume.textContent =
-        planet.vol
-            ? `${planet.vol.volValue} ×10^${planet.vol.volExponent} km³`
-            : "Unknown";
+    if (bodyType)
+        bodyType.textContent =
+            planet.bodyType || "Planet";
 
-    perihelion.textContent =
-        planet.perihelion
-            ? `${planet.perihelion.toLocaleString()} km`
-            : "Unknown";
+    if (volume)
+        volume.textContent =
+            planet.vol
+                ? `${planet.vol.volValue} ×10^${planet.vol.volExponent} km³`
+                : "Unknown";
 
-    aphelion.textContent =
-        planet.aphelion
-            ? `${planet.aphelion.toLocaleString()} km`
-            : "Unknown";
+    if (perihelion)
+        perihelion.textContent =
+            planet.perihelion
+                ? `${planet.perihelion.toLocaleString()} km`
+                : "Unknown";
 
-    eccentricity.textContent =
-        planet.eccentricity ?? "Unknown";
+    if (aphelion)
+        aphelion.textContent =
+            planet.aphelion
+                ? `${planet.aphelion.toLocaleString()} km`
+                : "Unknown";
 
-    inclination.textContent =
-        planet.inclination
-            ? `${planet.inclination}°`
-            : "Unknown";
+    if (eccentricity)
+        eccentricity.textContent =
+            planet.eccentricity ?? "Unknown";
 
-    axialTilt.textContent =
-        planet.axialTilt
-            ? `${planet.axialTilt}°`
-            : "Unknown";
+    if (inclination)
+        inclination.textContent =
+            planet.inclination
+                ? `${planet.inclination}°`
+                : "Unknown";
 
-    temp.textContent = "N/A";
+    if (axialTilt)
+        axialTilt.textContent =
+            planet.axialTilt
+                ? `${planet.axialTilt}°`
+                : "Unknown";
 
-    escape.textContent =
-        planet.escape
-            ? `${planet.escape} m/s`
-            : "Unknown";
+    if (temp)
+        temp.textContent = "N/A";
+
+    if (escape)
+        escape.textContent =
+            planet.escape
+                ? `${planet.escape} m/s`
+                : "Unknown";
 }
 
 cards.forEach(card => {

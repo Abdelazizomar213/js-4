@@ -68,7 +68,7 @@ export default class Api {
     }
 
     // ==========================
-    // Planets
+    // All Planets
     // ==========================
 
     static async getPlanets() {
@@ -85,7 +85,7 @@ export default class Api {
                 await response.json();
 
             return data.bodies.filter(
-                planet => planet.isPlanet
+                body => body.isPlanet
             );
 
         }
@@ -95,6 +95,34 @@ export default class Api {
             console.log(error);
 
             return [];
+
+        }
+
+    }
+
+    // ==========================
+    // Single Planet
+    // ==========================
+
+    static async getPlanet(id) {
+
+        try {
+
+            const response =
+                await fetch(`${CONFIG.PLANETS_URL}${id}`);
+
+            if (!response.ok)
+                throw new Error("Planet API Error");
+
+            return await response.json();
+
+        }
+
+        catch (error) {
+
+            console.log(error);
+
+            return null;
 
         }
 
